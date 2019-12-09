@@ -32,8 +32,6 @@ def execute_transaction
 if (self.status == "pending") && (transfer < sender.balance) && receiver.valid? == true && sender.valid? == true
     receiver.balance += transfer
     self.status = "complete"
-elsif self.status == "complete"
-    puts "Transaction already occurred."
 
   else (sender.valid? == false) || self.status == "closed" || self.status == "complete"
   self.status = "rejected"
