@@ -31,15 +31,24 @@ class Transfer
   if (sender.valid? == false)
     self.status = "rejected"
     puts "Transaction rejected. Please check your account balance."
-  elsif (sender.valid? == true) && (sender.balance > transfer)
-    (sender.balance -= transfer) && (receiver.balance += transfer) && (self.status = "complete")
+  elsif self.status == "complete"
+    puts "Transaction already occurred."
+
+  else (sender.valid? == true)
+      sender.balance -= transfer
+      receiver.balance += transfer
+      self.status = "complete"
     end
 end
 
+
   def reverse_transfer
+    while self.status == "complete"
+
     receiver.balance -= transfer
     sender.balance += transfer
     self.status = "reversed"
+    end
   end
 
 end
