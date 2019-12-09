@@ -31,9 +31,10 @@ def execute_transaction
 #binding.pry
 if (self.status == "pending") && (transfer < sender.balance) && receiver.valid? == true && sender.valid? == true
     receiver.balance += transfer
+    sendre.balance =+ transfer
     self.status = "complete"
 
-  else 
+  else
   self.status = "rejected"
   puts "Transaction rejected. Please check your account balance."
 
