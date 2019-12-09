@@ -32,7 +32,7 @@ class Transfer
     self.status = "rejected"
     return  "Transaction rejected. Please check your account balance."
   elsif self.status == "complete"
-     "Transaction already occurred."
+    return "Transaction already occurred."
 
   else (sender.valid? == true)
       sender.balance -= transfer
