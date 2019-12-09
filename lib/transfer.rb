@@ -30,7 +30,6 @@ class Transfer
 #  binding.pry
   if (sender.valid? == false) || (sender.balance < transfer)
     self.status = "rejected"
-    return  "Transaction rejected. Please check your account balance."
   elsif self.status == "complete"
     return "Transaction already occurred."
 
