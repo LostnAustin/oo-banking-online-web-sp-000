@@ -34,7 +34,7 @@ class Transfer
   elsif self.status == "complete"
     return "Transaction already occurred."
 
-  else (sender.valid? == true)
+  else 
       sender.balance -= transfer
       receiver.balance += transfer
       self.status = "complete"
