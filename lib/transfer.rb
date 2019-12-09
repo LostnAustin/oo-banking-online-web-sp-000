@@ -33,7 +33,7 @@ if (self.status == "pending") && (transfer < sender.balance) && receiver.valid? 
     receiver.balance += transfer
     self.status = "complete"
 
-  else (sender.valid? == false) || self.status == "closed" || self.status == "complete"
+  else 
   self.status = "rejected"
   puts "Transaction rejected. Please check your account balance."
 
